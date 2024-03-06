@@ -9,7 +9,7 @@ cello_program = pretty_midi.instrument_name_to_program('Cello')
 cello = pretty_midi.Instrument(program=cello_program)
 notes = ['C5', 'E5', 'G5']
 # Iterate over note names, which will be converted to note number later
-for pos in range(0,3):
+for pos in range(0,len(notes)):
     # Retrieve the MIDI note number for this note name
     note_number = pretty_midi.note_name_to_number(notes[pos])
     # Create a Note instance for this note, starting at 0s and ending at .5s
