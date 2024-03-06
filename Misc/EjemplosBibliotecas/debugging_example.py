@@ -8,6 +8,9 @@ class Roscon:
         diametro = self.radio * 2
         return diametro
     
+    def setRadio(self,radio):
+        self.radio = radio
+    
 def instanciaRoscon():
     radio_aleatorio = random.randint(1,100)    # Genera un radio aleatorio para el roscón
     nuevo_roscon = Roscon(radio_aleatorio)     # Instancia el nuevo roscón
