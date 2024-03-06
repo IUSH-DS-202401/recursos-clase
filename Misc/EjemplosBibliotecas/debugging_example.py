@@ -15,6 +15,7 @@ class Roscon:
         self.radio = radio
         
     def getRadio(self):
+        radio_f = float(self.radio)
         return self.radio
     
 def instanciaRoscon():
