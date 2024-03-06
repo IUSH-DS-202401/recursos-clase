@@ -8,6 +8,9 @@ class Roscon:
         diametro = self.radio * 2
         return diametro
     
+    def printCirculo(self):
+        print(f"Mi radio es {self.radio}")
+    
     def setRadio(self,radio):
         self.radio = radio
     
