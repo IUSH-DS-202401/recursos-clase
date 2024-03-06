@@ -15,7 +15,8 @@ class Roscon:
         self.radio = radio
         
     def getRadio(self):
-        return self.radio
+        radio_str = str(self.radio)
+        return self.radio_str
     
 def instanciaRoscon():
     radio_aleatorio = random.randint(1,100)    # Genera un radio aleatorio para el roscón
