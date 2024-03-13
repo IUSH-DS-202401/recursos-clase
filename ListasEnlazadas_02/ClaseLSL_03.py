@@ -30,9 +30,11 @@ class LSL:
     def anterior(self, posterior: NS) -> NS:
         iterador = self.primerNodo()
         nodoAnt = None
-        while iterador != posterior:
+        while iterador != posterior and iterador is not None:
             nodoAnt = iterador
             iterador = iterador.retornaLiga()
+        if iterador is None:
+            raise Exception(f"No se encontró {posterior} en la lista")
         return nodoAnt
     
     def buscaDondeInsertar(self, candidato) -> NS:
