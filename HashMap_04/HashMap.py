@@ -8,7 +8,7 @@ class HashMap:
     def obtener(self,llave):
         hash_reducido = self.__obtener_hash_reducido(llave)
         iterador = self.buckets[hash_reducido]
-        while iterador is not None and hash_reducido != iterador.retornaLlave():
+        while iterador is not None and llave != iterador.retornaLlave():
             iterador = iterador.retornaLiga()
         if iterador is None:
             raise("No se encontró la llave {llave}")
@@ -33,7 +33,7 @@ class HashMap:
         iterador = self.buckets[hash_reducido]
         anterior = None
 
-        while iterador is not None and hash_reducido != iterador.retornaLlave():
+        while iterador is not None and llave != iterador.retornaLlave():
             anterior = iterador
             iterador = iterador.retornaLiga()
         
