@@ -58,13 +58,18 @@ destino = Torre("d")
 
 print_aros(4,origen, auxiliar,destino)
 
+
 def mover_torre(n,o,a,d):
-    if n > 0:
-        mover_torre(n-1,o,d,a)
-        d.apilar(o.desapilar())
+    """ Mueve la torre de n aros desde o (origen) hasta d (destino) usando a (auxiliar)."""
+    if n > 0: # Si hay al menos un aro en la torre
+        mover_torre(n-1,o,d,a) # Mueve la torre de n-1 aros de origen a auxiliar usando destino
+        n_aro = o.desapilar() #Toma el aro que queda en el origen
+        d.apilar(n_aro) # Mueve el aro que estaba en el origen al destino
         print(f"{o.nombre} -> {d.nombre}")
         print_aros(4,origen, auxiliar,destino)
-        input()
-        mover_torre(n-1,a,o,d)
+        input() 
+        mover_torre(n-1,a,o,d) # Mueve la torre de n-1 aros de auxiliar a destino usando origen
 
 mover_torre(4, origen,auxiliar,destino)
+
+
